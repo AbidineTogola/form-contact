@@ -1,15 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const bouton = document.querySelector("#submit");
-  if (bouton) {
-    bouton.addEventListener("click", () => {
-      bouton.innerText = "Merci !";
-      bouton.style.background = "none";
-      bouton.style.backgroundColor = "#28a745";
-      bouton.style.color = "white";
-    });
-  }
-
   const form = document.getElementById("contactForm");
+
   if (form) {
     form.addEventListener("submit", function (e) {
       let valid = true;
@@ -51,6 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!valid) {
         e.preventDefault();
+      } else {
+        // Changer le bouton seulement si le formulaire est valide
+        if (bouton) {
+          bouton.innerText = "Merci !";
+          bouton.style.background = "none";
+          bouton.style.backgroundColor = "#28a745";
+          bouton.style.color = "white";
+        }
       }
     });
   }
